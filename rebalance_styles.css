@@ -1,0 +1,206 @@
+/* Standard padding: 12px
+ * Background: white
+ * Text: black
+ * Highlight: #00a770
+ * Link: #003df2
+ */
+
+* {
+  font-family: arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+a:link {
+  color: #003df2;
+}
+a:visited {
+  color: #003df2;
+}
+a:active {
+  color: red;
+}
+a:hover {
+  text-decoration: underline;
+}
+a.external:hover {
+  text-decoration: underline overline;
+}
+
+body {
+  background: white;
+  color: black;
+}
+
+pre {
+  font-family: Courier, monospace;
+}
+
+#container {
+  display: block;
+  min-width: 1024px;
+  width: 100%;
+  text-align: left;
+}
+
+#banner {
+  display: block;
+}
+
+#navigationmenu {
+  display: inline-block;
+  position: static;
+  width: 130px;
+  vertical-align: top;
+  padding: 12px;
+  padding-right: 6px;
+}
+#navigationmenu ul {
+  list-style-type: none;
+  margin-left: 1em;
+}
+#navigationmenu>ul {
+  margin-left: 0;
+}
+#navigationmenu li {
+  margin: 6px 0 6px 0;
+}
+#logo {
+  border: 0;
+}
+
+.largeadcontainer {
+  display: block;
+  float: right;
+  margin-left: 12px;
+}
+
+.thinadcontainer {
+  display: block;
+  margin-top: 6em;
+}
+
+#content {
+  display: inline-block;
+  position: static;
+  /* Calculated using:
+     (#container.min-width - all menu padding - menu width - all content padding) / #container.min-width
+   */
+  width: 82%; 
+  max-width: 1000px;
+  /* min-height: 40em; */
+  vertical-align: top;
+  padding: 12px;
+}
+
+#content ol li {list-style-type: decimal;}
+#content ul {
+  margin-left: 1em;
+}
+
+p {
+  margin: 0 0 12px 0;
+}
+
+p.faq {
+  margin: 0;
+  color: #00a770;
+}
+
+p.faqanswer{
+}
+
+h1 {
+  margin: 0 0 12px 0;
+  font-size: 200%;
+  color: #00a770;
+}
+
+h2 {
+  margin: 0 0 12px 0;
+  font-size: 150%;
+  color: #00a770;
+}
+
+h3 {
+  margin: 0 0 12px 0;
+  font-size: 110%;
+}
+h3.label {
+  margin: 0;
+}
+
+.section {
+  padding-left: 24px;
+}
+
+#footer {
+  text-align: center;
+  color: #00a770;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
+.error {
+  color: red;
+}
+
+#assetinput {
+  width: 100%;
+  font-family: courier, monospace;
+  font-size: inherit;
+  overflow: auto;
+  white-space: pre;
+}
+
+#results {
+  border-color: #00a770;
+  border-width: medium;
+  border-style: solid;
+  margin-bottom: 12px;
+  padding: 6px;
+}
+
+#resulttable {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  empty-cells: show;
+  border: 0px hidden transparent;
+}
+
+#resulttable td, th {
+  text-align: right;
+  padding-right: 0.5em;
+}
+
+tr.header, tr:nth-child(2n+0) {
+  background-color: #eeeeee;
+}
+
+#resulttable th {
+  vertical-align: bottom;
+}
+
+#resulttable td {
+  vertical-align: middle;
+}
+
+#resulttable .assetname {
+  text-align: left;
+  width: 22%;
+}
+
+.amountcolumn {
+  width: 12.5%;
+}

@@ -1,0 +1,83 @@
+ <link rel="stylesheet" href="rebalance_styles.css" type="text/css" />
+ <h1>Optimal lazy portfolio rebalancing calculator</h1>
+      <h2>The situation</h2>
+
+      <div class="section">
+        <p>
+          You have a portfolio of investments, and stick to your asset allocation.
+          You sometimes rebalance your portfolio by selling over-weighted assets and buying under-weighted ones.
+          However, deciding how frequently and aggressively to rebalance is a trade-off: tighter adherence to your target allocation requires higher expenditures in transaction costs, taxable gains, and effort.
+          Sometimes, you end up selling assets only to buy them again at a higher price.
+        </p>
+      </div>
+
+      <h2>A better method: Optimal lazy rebalancing</h2>
+
+      <div class="section">
+        <p>
+          Avoid these issues by being as <em>lazy</em> as possible: only rebalance as you contribute to or withdraw from your portfolio, avoid selling assets when you contribute, and avoid buying assets when you withdraw.
+        </p>
+        <p>
+          When contributing, use this calculator to help you <strong>purchase</strong> under-weighted assets optimally using only the contributed amount so that you get as close as possible to your target allocation <em>without selling</em> anything.
+          Similarly, if you are withdrawing from your portfolio, use this calculator to help you <strong>sell</strong> over-weighted assets optimally to yield the desired withdrawal while getting as close as possible to your target allocation <em>without purchasing</em> anything.
+        </p>
+      </div>
+
+      <h2>The calculator</h2>
+
+        <div class="section">
+
+        <form action="">
+          <p>
+            To use this calculator, replace the example information in the following fields and click Recalculate.
+            Don't worry about lining up columns in the target allocation and current values field; you can even copy and paste from a spreadsheet as long as the columns are in the right order.
+            Entering share prices is optional for each asset.
+            The resulting table below will tell you how much of each asset to buy or sell.<br />
+            <input type="reset" value="Click to restore example information" />
+          </p>
+
+          <h3 class="label">Amount to contribute:</h3>
+          <p><input id="contributioninput" type="text" value="5000.00" size="20" maxlength="19" autofocus /><br />Enter a negative number to signify withdrawal.</p>
+
+          <h3 class="label">Target allocation and current values:</h3>
+          <p><textarea id="assetinput" rows="10" cols="80">
+ASSET NAME          TARGET   VALUE
+Stock               56%      33000.00
+Int'l Stock         24%      15000.00
+Bond                20%      11000.00
+</textarea></p>
+        </form>
+
+        <noscript>
+          <h3><span class="error">Sorry, this calculator cannot function without JavaScript.</span></h3>
+        </noscript>
+        <h3><input id="calculatebutton" type="button" value="Recalculate" class="default" /></h3>
+
+        <h3 class="label">Results:</h3>
+        <div id="results">
+        </div>
+      </div>
+       <h2>Frequently asked questions</h2>
+
+        <p class="faq">Why did an asset's allocation get farther away from its target upon rebalancing?</p>
+        <p class="faqanswer">
+          It was necessary in order to prevent another asset from having an even more egregious deviation from its target allocation.
+        </p>
+
+        <p class="faq">What if the resulting allocation is not close enough to my desired allocation?</p>
+        <p class="faqanswer">
+          This calculator will get as close as possible using only the contributed or withdrawn amount.
+          To get closer, you must contribute or withdraw a greater amount, or perform conventional rebalancing.
+          Note that "closeness" is relative to the target amount; this calculator considers an asset with a 40% target that is 39% of the portfolio to be "closer" than an asset with a 4% target that is 3% of the portfolio.
+        </p>
+
+        <p class="faq">What quantity does this calculator actually optimize?</p>
+        <p class="faqanswer">
+          Define the fractional deviation <em>f</em> of an asset to be <em>a/t</em>&nbsp;&#8722;&nbsp;1, where <em>t</em> is the asset's target allocation and <em>a</em> is its actual portion of the portfolio.
+          When contributing, this calculator maximizes the minimum <em>f</em> across all assets.
+          When withdrawing, this calculator minimizes the maximum <em>f</em>.
+          For more details, please read this <a href="explanation.html">full explanation</a>.
+        </p>
+      </div>
+
+      <script src="rebalance_scripts.js" type="text/javascript"></script>
